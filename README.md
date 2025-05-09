@@ -51,7 +51,7 @@ $ npm run dev
 - components/ - React components used throughout the application
   - CryptoList.tsx - Main component for displaying the list of cryptocurrencies
   - CryptoItem.tsx - Component for individual cryptocurrency items
-  - SearchBar.tsx - Search input component
+  - Search.tsx - Search input component
   - Header.tsx - Header component with title
   - LoadingState.tsx - Loading indicator component
   - ErrorState.tsx - Error display component
