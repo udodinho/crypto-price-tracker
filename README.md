@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Crypto Price Tracker
 
-## Getting Started
+A simple cryptocurrency price tracker built with Next.js and React Query that fetches real-time data from the CoinGecko API.
 
-First, run the development server:
+### Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Displays live price data for Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Polygon (MATIC), and Dogecoin (DOGE)
+- Shows current price in USD and 24-hour price change percentage
+- Auto-refreshes data every 30 seconds
+- Search functionality to look up other cryptocurrencies
+- Sorting by name, price, and 24-hour change percentage
+
+### Requirements
+
+- Next.js
+
+- React Query (@tanstack/react-query)
+
+- Tailwind CSS
+
+## Setup Instructions
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Nodejs: You should have Node installed. [Download nodejs](https://nodejs.org)
+- Postgresql [Download Postgresql](https://www.postgresql.org/download/)
+
+### Installation
+
+Clone the repo and install dependencies
+
+```shell
+git clone https://github.com/udodinho/crypto-price-tracker.git
+cd crypto-price-tracker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```shell
+$ npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Start server
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```shell
+$ npm run dev
+```
 
-## Learn More
+### Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- app/ - Contains the Next.js app router pages and layout
+- components/ - React components used throughout the application
+  - CryptoList.tsx - Main component for displaying the list of cryptocurrencies
+  - CryptoItem.tsx - Component for individual cryptocurrency items
+  - SearchBar.tsx - Search input component
+  - Header.tsx - Header component with title
+  - LoadingState.tsx - Loading indicator component
+  - ErrorState.tsx - Error display component
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Scaling to Handle 100+ Coins and Multiple APIs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Implement Pagination:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    - Add server-side pagination to limit the number of results fetched at once
+    - Implement infinite scrolling or traditional pagination UI
+
+2. API Management:
+
+    - Create a unified data service layer that abstracts away API details
+    - Implement API key rotation and rate limiting protection
+    - Add fallback APIs for redundancy (e.g., if CoinGecko fails, try CoinMarketCap)
+
+3. User Experience:
+    - Add preferences storage for favorite coins (local storage or user accounts)
+    - Implement theme settings
+    - Add price alerts functionality
+
+# crypto-price-tracker
