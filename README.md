@@ -25,7 +25,6 @@ A simple cryptocurrency price tracker built with Next.js and React Query that fe
 Before you begin, ensure you have met the following requirements:
 
 - Nodejs: You should have Node installed. [Download nodejs](https://nodejs.org)
-- Postgresql [Download Postgresql](https://www.postgresql.org/download/)
 
 ### Installation
 
