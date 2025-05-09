@@ -76,4 +76,3 @@ $ npm run dev
     - Implement theme settings
     - Add price alerts functionality
 
-# crypto-price-tracker
